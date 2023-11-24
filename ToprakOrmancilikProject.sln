@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToprakOrmancilikProject", "ToprakOrmancilikProject\ToprakOrmancilikProject.csproj", "{9DBD4C88-2FDF-4DCC-9150-6B769E9D7E2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{47D6733A-EB1B-4034-A011-C43D8DDD7473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{47D6733A-EB1B-4034-A011-C43D8DDD7473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{C2D7D2A7-EFD8-4695-9A01-96BB15940717}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{C2D7D2A7-EFD8-4695-9A01-96BB15940717}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bussiness", "Bussiness\Bussiness.csproj", "{DDB8549D-C6BB-4505-812B-AA600C1B5B2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussiness", "Bussiness\Bussiness.csproj", "{DDB8549D-C6BB-4505-812B-AA600C1B5B2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToprakProject", "ToprakProject\ToprakProject.csproj", "{29D4A64A-34B8-47A3-B0AB-42D8E0EB25D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9DBD4C88-2FDF-4DCC-9150-6B769E9D7E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9DBD4C88-2FDF-4DCC-9150-6B769E9D7E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DBD4C88-2FDF-4DCC-9150-6B769E9D7E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9DBD4C88-2FDF-4DCC-9150-6B769E9D7E2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47D6733A-EB1B-4034-A011-C43D8DDD7473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47D6733A-EB1B-4034-A011-C43D8DDD7473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D6733A-EB1B-4034-A011-C43D8DDD7473}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{DDB8549D-C6BB-4505-812B-AA600C1B5B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDB8549D-C6BB-4505-812B-AA600C1B5B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDB8549D-C6BB-4505-812B-AA600C1B5B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D4A64A-34B8-47A3-B0AB-42D8E0EB25D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D4A64A-34B8-47A3-B0AB-42D8E0EB25D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D4A64A-34B8-47A3-B0AB-42D8E0EB25D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D4A64A-34B8-47A3-B0AB-42D8E0EB25D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
