@@ -8,5 +8,24 @@ namespace ToprakProject.Controllers
         {
             return View();
         }
+
+        public PartialViewResult HeadPartial()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult HeaderPartial()
+        {
+
+            return PartialView();
+        }
+        public PartialViewResult MainSlider()
+        {
+            return PartialView();
+        }
+        public PartialViewResult ProductPartial()
+        {
+            return PartialView();   
+        }
     }
 }
