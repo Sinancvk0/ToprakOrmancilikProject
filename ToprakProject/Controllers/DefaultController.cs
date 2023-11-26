@@ -27,5 +27,15 @@ namespace ToprakProject.Controllers
         {
             return PartialView();   
         }
+        public PartialViewResult OddPartial()
+        {
+
+            return PartialView();   
+        }
+        public PartialViewResult BestPartial()
+        {
+
+            return PartialView();
+        }
     }
 }
