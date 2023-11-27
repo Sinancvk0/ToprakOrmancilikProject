@@ -10,7 +10,7 @@ namespace Model
     {
         public int Id { get; set; }
 
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         public bool İsActive { get; set; }
         public bool isDeleted { get; set; } = false;
