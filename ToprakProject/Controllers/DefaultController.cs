@@ -17,5 +17,13 @@ namespace ToprakProject.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult ScriptsPartial()
+        {
+            return PartialView();
+        }
+        public  PartialViewResult FooterPartial()
+        {
+            return PartialView();
+        }
     }
 }
