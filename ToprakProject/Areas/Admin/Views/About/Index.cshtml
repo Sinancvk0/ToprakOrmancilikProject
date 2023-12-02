@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -6,17 +7,19 @@
 <div>
     <div class="card">
         <div class="card-header text-white bg-danger bg-gradient">
-            <span class="fs-4">Görseller Bölümü Listesi</span>
-            <a href="#" id="btnEkle" class="btn btn-warning ms-2">Görsel Ekle</a>
+            <span class="fs-4">Hakkımızda Bölümü Listesi</span>
+            <a href="#" id="btnEkle" class="btn btn-warning ms-2">Hakkımızda Bilgileri Ekle</a>
         </div>
         <div class="card-body">
-            <table id="GalleryTable" class="table table-bordered table-striped" style="width:100%">
+            <table id="AboutTable" class="table table-bordered table-striped" style="width:100%">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Görsel</th>
                         <th>Başlık</th>
                         <th>Açıklama</th>
+                        <th>Alt Başlık</th>
+                        <th>Alt Açıklama</th>
                         <th>Oluşturulma Tarihi</th>
                         <th>İşlemler</th>
                     </tr>
@@ -25,6 +28,7 @@
         </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
      aria-labelledby="modalTitleId" aria-hidden="true">
@@ -44,13 +48,22 @@
                         <label class="form-label">Başlık</label>
                         <input type="text" id="txtName" class="form-control">
                     </div>
-                  
-                   <div class="mb-3">
+
+                    <div class="mb-3">
                         <label class="form-label">Açıklama</label>
                         <textarea id="txtDescription" class="form-control"></textarea>
                     </div>
-                  
-                 
+                    <div class="mb-3">
+                        <label class="form-label">AltBaşlık</label>
+                        <input type="text" id="txtName2" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Alt Açıklama</label>
+                        <textarea id="txtDescription2" class="form-control"></textarea>
+                    </div>
+
+
                 </div>
             </div>
             <div class="modal-footer">
@@ -60,18 +73,23 @@
         </div>
     </div>
 </div>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
 <script>
     $(document).ready(function () {
+
+
         $("#btnEkle").click(function () {
             $("#modalTitle").text("Görseller Bölümü");
             $("#btnSave").text("Kaydet").removeClass('btn-success').addClass('btn-primary');
             $("#txtImage").val("");
             $("#txtName").val("");
             $("#txtDescription").val("");
-     
+            $("#txtName2").val("");
+            $("#txtDescription2").val("");
+
 
             $("#modal").modal('show');
 
@@ -80,17 +98,21 @@
                 let veri = {
                     name: $("#txtName").val(),
                     desciription: $("#txtDescription").val(),
-          
+                    name2: $("#txtName2").val(),
+                    desciription2: $("#txtDescription2").val(),
+
                 };
 
                 let fileData = new FormData();
                 fileData.append('title', veri.name);
                 fileData.append('description', veri.desciription);
+                fileData.append('title2', veri.name2);
+                fileData.append('description2', veri.desciription2);
                 fileData.append("image", $("#fileImage")[0].files[0]);
 
                 $.ajax({
                     type: 'POST',
-                    url: '/Admin/Gallery/Add',
+                    url: '/Admin/About/Add',
                     data: fileData,
                     contentType: false,
                     processData: false,
@@ -99,8 +121,8 @@
                         $("#txtImage").val("");
                         $("#txtName").val("");
                         $("#txtDescription").val("");
-                      
-                   
+
+
                         dataTable.ajax.reload();
                     },
                     error: function (error) {
@@ -114,9 +136,13 @@
             });
         });
 
-        var dataTable = $('#GalleryTable').DataTable({
+
+
+
+
+        var dataTable = $('#AboutTable').DataTable({
             ajax: {
-                url: '/Admin/Gallery/GetList',
+                url: '/Admin/About/GetList',
                 dataSrc: ''
             },
             columns: [
@@ -129,17 +155,19 @@
                 },
                 { data: 'title' },
                 { data: 'description' },
+                { data: 'title2' },
+                { data: 'description2' },
                 { data: 'createDate' },
                 {
                     data: null,
                     render: function (data, type, row) {
-                        return `<a href="#" onclick="deleteGallery(${row.id})" class="btn btn-sm btn-danger">Sil</a>`;
+                        return `<a href="#" onclick="deleteAbout(${row.id})" class="btn btn-sm btn-danger">Sil</a>`;
                     }
                 }
             ]
         });
     });
-    function deleteGallery(galleryId) {
+    function deleteAbout(aboutId) {
         Swal.fire({
             title: 'Silmek istediğinize emin misiniz?',
             text: "Görsel Silinecek",
@@ -151,7 +179,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: '/Admin/Gallery/DeleteGallery/' + galleryId,
+                    url: '/Admin/About/DeleteAbout/' + aboutId,
                     method: 'POST',
                     success: function () {
                         Swal.fire(
