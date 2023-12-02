@@ -19,5 +19,6 @@ namespace Data
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Question> Questions { get; set; }
     }
 }
