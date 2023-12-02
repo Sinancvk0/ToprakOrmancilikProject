@@ -1,18 +1,17 @@
 ﻿using Bussiness.Services;
-
 using Microsoft.AspNetCore.Mvc;
 using Model;
 
 namespace ToprakProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class GalleryController : Controller
+    public class AboutController : Controller
     {
-        private readonly IGalleryService _galleryService;
+        private readonly IAboutService _aboutService;
 
-        public GalleryController(IGalleryService galleryService)
+        public AboutController(IAboutService aboutService)
         {
-            _galleryService = galleryService;
+            _aboutService = aboutService;
         }
 
         public IActionResult Index()
@@ -22,7 +21,7 @@ namespace ToprakProject.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetList()
         {
-            var values = _galleryService.TGetList();
+            var values=_aboutService.TGetList();    
             return Json(values);
         }
         [HttpGet]
@@ -31,7 +30,7 @@ namespace ToprakProject.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Add(Gallery gallery, IFormFile image)
+        public IActionResult Add(About about, IFormFile image)
         {
             if (image != null && image.Length > 0)
             {
@@ -45,21 +44,20 @@ namespace ToprakProject.Areas.Admin.Controllers
                 }
 
 
-                gallery.Image = "/images/" + fileName;
+                about.Image = "/images/" + fileName;
             }
-            _galleryService.TAdd(gallery);
+            _aboutService.TAdd(about);
             return Ok();
         }
         [HttpPost]
 
-        public IActionResult DeleteGallery(int id)
+        public IActionResult DeleteAbout(int id)
         {
-            var values = _galleryService.TGetById(id);
+            var values = _aboutService.TGetById(id);
 
-            _galleryService.TDelete(values);
+            _aboutService.TDelete(values);
 
             return Ok();
         }
-
     }
 }
