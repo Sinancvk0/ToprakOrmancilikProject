@@ -8,7 +8,7 @@ namespace Model
 {
     public class Question
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Reply { get; set; }
         public string  Que{ get; set; }
     }

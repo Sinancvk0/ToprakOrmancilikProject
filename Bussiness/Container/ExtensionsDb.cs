@@ -29,6 +29,9 @@ namespace Bussiness.Container
 
             services.AddScoped<ISliderService,SliderManager>(); 
             services.AddScoped<ISliderDal,EfSliderDal>();   
+            
+            services.AddScoped<IQuestionService,QuestionManager>(); 
+            services.AddScoped<IQuestion,EfQuestion>();    
 
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Bussiness.Services;
+using Data.Abstract;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Bussiness.Content
 {
     public class QuestionManager : IGenericService<Question>, IQuestionService
     {
+        private readonly IQuestion _question;
+
+        public QuestionManager(IQuestion question)
+        {
+            _question = question;
+        }
+
         public void TAdd(Question t)
         {
-            throw new NotImplementedException();
+          _question.Insert(t);
         }
 
         public void TDelete(Question t)
         {
-            throw new NotImplementedException();
+           _question.Delete(t); 
         }
 
         public Question TGetById(int id)
         {
-            throw new NotImplementedException();
+            return _question.GetById(id);
         }
 
         public List<Question> TGetList()
         {
-            throw new NotImplementedException();
+           return _question.GetList();
         }
 
         public void TUpdate(Question t)
         {
-            throw new NotImplementedException();
+           _question.Update(t); 
         }
     }
 }
