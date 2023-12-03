@@ -18,9 +18,18 @@
                                 <div class="col-sm-7 subject-content mt-sm-0 mt-4">
                                     <h4>@item.Title</h4>
                                     <div class="dst-btm">
-                                        <p class="sub-para">@item.Description</p>
+                                        <p class="sub-para">
+                                            @if (item.Description.Length > 50)
+                                            {
+                                                @item.Description.Substring(0, 100) <span class="read-more">Devamını Oku</span>
+                                            }
+                                            else
+                                            {
+                                                @item.Description
+                                            }
+                                        </p>
                                     </div>
-                                    <h6 class=""> Detaylar </h6>
+                         @*            <h6 class=""> Detaylar </h6> *@
                                 </div>
                             </div>
                         </a>
