@@ -16,8 +16,7 @@
                     <tr>
                         <th>#</th>
                         <th>AnaGörsel</th>
-                        <th>Görsel 2</th>
-                        <th>Görsel 3</th>
+                    
                         <th>Başlık</th>
                         <th>Açıklama</th>
                         <th>Alt Açıklama</th>
@@ -30,6 +29,20 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="descriptionModalLabel">Açıklama</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="descriptionContent"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -50,21 +63,20 @@
                         return `<img src="${data}" class="img-thumbnail" width="50" height="50" alt="Görsel">`;
                     }
                 },
-                {
-                    data: 'title2',
-                    render: function (data, type, row) {
-                        return `<img src="${data}" class="img-thumbnail" width="50" height="50" alt="Görsel">`;
-                    }
-                },
-                {
-                    data: 'title3',
-                    render: function (data, type, row) {
-                        return `<img src="${data}" class="img-thumbnail" width="50" height="50" alt="Görsel">`;
-                    }
-                },
+               
                 { data: 'title' },
-                { data: 'description' },
-                { data: 'description2' },
+                {
+                    data: 'description',
+                    render: function (data, type, row) {
+                        return `<a href="#" class="description-link" data-description="${data}">Açıklama</a>`;
+                    }
+                },
+                {
+                    data: 'description2',
+                    render: function (data, type, row) {
+                        return `<a href="#" class="description2-link" data-description="${data}">Alt Açıklama</a>`;
+                    }
+                },
                 { data: 'tags' },
                 { data: 'createDate' },
                 {
@@ -74,6 +86,11 @@
                     }
                 }
             ]
+        });
+        $('#BlogTable').on('click', '.description-link, .description2-link', function () {
+            var description = $(this).data('description');
+            $('#descriptionContent').text(description);
+            $('#descriptionModal').modal('show');
         });
     });
     function deleteBlog(blogId) {
