@@ -2,6 +2,7 @@
 using Bussiness.Services;
 using Data.Abstract;
 using Data.EntityFramework;
+using Helper;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,12 @@ namespace Bussiness.Container
             services.AddScoped<ISliderDal,EfSliderDal>();   
             
             services.AddScoped<IQuestionService,QuestionManager>(); 
-            services.AddScoped<IQuestion,EfQuestion>();    
+            services.AddScoped<IQuestion,EfQuestion>();
+
+            services.AddScoped<IBlogService, BlogManager>();
+            services.AddScoped<IBlogDal, EfBlog>();
+
+            services.AddSingleton<FileUpload>();
 
         }
     }

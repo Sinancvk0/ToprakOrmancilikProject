@@ -1,0 +1,69 @@
+﻿@using Model
+@model Blog
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Blog Post Ekle</h4>
+                <p class="card-title-desc">
+                    Yeni bir hizmet eklemek için aşağıdaki formu kullanabilirsiniz.
+                </p>
+
+                <form method="post" enctype="multipart/form-data" action="/Admin/Blog/Addblog">
+
+                    <div class="mb-3 row">
+                        <label for="title" class="col-md-2 col-form-label">Başlık</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" asp-for="Title" id="title" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="title" class="col-md-2 col-form-label">Etiketler</label>
+                        <div class="col-md-10">
+                            <input class="form-control" placeholder="Etiketlerin arasına virgül(,) koymanız gerekmektedir." type="text" asp-for="Tags" id="tag" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="content" class="col-md-2 col-form-label">Açıklama</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="content" asp-for="Description" rows="6" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label for="content" class="col-md-2 col-form-label">Alt Açıklama</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="content" asp-for="Description2" rows="6" required></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                        <label for="imageFile" class="col-md-2 col-form-label">Ana Görsel</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="file" id="imageFile" asp-for="Image">
+                            <small class="text-muted">Dosya yüklemek için bir dosya seçin.</small>
+                        </div>
+                    </div>
+                
+
+                    <div class="mb-3 row">
+                        <div class="col-md-10 offset-md-2">
+                            <button type="submit" class="btn btn-primary">Blog Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
+

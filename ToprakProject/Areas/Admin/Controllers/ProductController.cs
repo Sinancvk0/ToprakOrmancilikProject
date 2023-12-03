@@ -9,6 +9,7 @@ namespace ToprakProject.Areas.Admin.Controllers
     {
         private readonly IProductService _product;
 
+
         public ProductController(IProductService product)
         {
             _product = product;
