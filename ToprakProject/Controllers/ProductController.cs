@@ -1,12 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bussiness.Services;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ToprakProject.Controllers
+public class ProductController : Controller
 {
-    public class ProductController : Controller
+    private readonly IProductService _db;
+
+    public ProductController(IProductService db)
     {
-        public IActionResult Index()
+        _db = db;
+    }
+
+    public IActionResult Index(int id)
+    {
+        var detail = _db.TGetById(id);
+        if (detail == null)
         {
-            return View();
+            return NotFound();
         }
+
+        return View(detail);
     }
 }

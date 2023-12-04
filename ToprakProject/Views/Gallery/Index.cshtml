@@ -1,8 +1,16 @@
-﻿
+﻿@model List<Gallery>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UlLayout.cshtml";
 }
+<style>
+    .column img {
+        width: 750px; /* Belirli bir genişlik */
+        height: 550px; /* Belirli bir yükseklik */
+        object-fit: cover; /* Resmin kırpılmasını engeller, orantıları korur */
+    }
+</style>
+
 
 <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
@@ -15,127 +23,34 @@
         </div>
     </div>
 </section>
-<!-- //about breadcrumb -->
-<!--  Work gallery section -->
+
 <section class="grids-1 py-5">
     <div class="grids py-lg-5 py-md-4">
         <div class="container">
-            <h3 class="hny-title mb-5">Destinations</h3>
+            <h3 class="hny-title mb-5">Projelerimiz</h3>
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-6">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g1.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html"></a></h4>
-                            <p> </p>
-                          
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-md-0">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g2.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Bankok</a></h4>
-                            <p>3Days, 4 Nights </p>
-                            <div class="dst-btm">
-                                <h6 class="">Start From </h6>
-                                <span>$1690</span>
+             
+                @if (Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-4 col-6">
+                            <div class="column">
+                                <a href="#"><img src="@item.Image" alt="" class="img-fluid"></a>
+                                <div class="info">
+                            @*         <h4><a href="blog-single.html"></a></h4> *@
+                                    <p>@item.Title </p>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-md-0 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g3.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Maldives</a></h4>
-                            <p>3Days, 4 Nights </p>
-                            <div class="dst-btm">
-                                <h6 class="">Start From </h6>
-                                <span>$1650</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g4.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Greece</a></h4>
-                            <p>3Days, 4 Nights</p>
-                            <div class="dst-btm">
-                                <h6 class=""> Start From </h6>
-                                <span>$1950</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g5.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">London</a></h4>
-                            <p>3Days, 4 Nights</p>
-                            <div class="dst-btm">
-                                <h6 class=""> Start From </h6>
-                                <span>$1850</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g6.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Julian Alps</a></h4>
-                            <p>3Days, 4 Nights</p>
-                            <div class="dst-btm">
-                                <h6 class=""> Start From </h6>
-                                <span>$1750</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g7.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Thailand</a></h4>
-                            <p>3Days, 4 Nights</p>
-                            <div class="dst-btm">
-                                <h6 class=""> Start From </h6>
-                                <span>$1650</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g8.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Singapore</a></h4>
-                            <p>3Days, 4 Nights</p>
-                            <div class="dst-btm">
-                                <h6 class=""> Start From </h6>
-                                <span>$1950</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-6 mt-lg-5 mt-4">
-                    <div class="column">
-                        <a href="blog-single.html"><img src="~/Thema/assets/images/g9.jpg" alt="" class="img-fluid"></a>
-                        <div class="info">
-                            <h4><a href="blog-single.html">Egypt</a></h4>
-                            <p>3Days, 4 Nights</p>
-                            <div class="dst-btm">
-                                <h6 class=""> Start From </h6>
-                                <span>$1450</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    }
+                }
+                else
+                {
+                    <p>No data available</p>
+                }
+
             </div>
         </div>
     </div>

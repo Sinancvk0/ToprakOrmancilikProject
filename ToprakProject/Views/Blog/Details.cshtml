@@ -1,17 +1,16 @@
-﻿@model Product
+﻿@model Blog
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_UlLayout.cshtml";
 }
 
-<!-- about breadcrumb -->
 <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
         <div class="container">
-            <h2 class="title">Hizmetlerimiz</h2>
+            <h2 class="title">Blog</h2>
             <ul class="breadcrumbs-custom-path mt-2">
                 <li><a href="#url">Ana Sayfa</a></li>
-                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Hizmet Detayları </li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Blog Detayları </li>
             </ul>
         </div>
     </div>
@@ -23,13 +22,13 @@
         <h3 class="blog-desc-big text-center mb-4">
             @Model.Title
         </h3>
-      
-            <div class="blog-post-img">
-                <a href="#">
-                    <h5 style="color:green; text-align: center;">Toprak Palet Orman Ürünleri Ambalaj</h5>
-                </a>
-            </div>
-     
+
+        <div class="blog-post-img">
+            <a href="#">
+                <h5 style="color:green; text-align: center;">Toprak Palet Orman Ürünleri Ambalaj</h5>
+            </a>
+        </div>
+
 
 
 
@@ -56,9 +55,9 @@
                     <div class="buttons-singles tags">
                         <h4>Tags :</h4>
                         <a href="#blog-tag">@Model.Tags</a>
-                       
+
                     </div>
-                 
+
                 </div>
 
             </div>

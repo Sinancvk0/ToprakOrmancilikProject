@@ -15,7 +15,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                 @foreach (var item in Model)
                 {
-                    <a class="dropdown-item" href="/">@item.Title</a>
+                    <a class="dropdown-item" href=" @Url.Action("Index", "Product", new { id = item.Id })">@item.Title</a>
                 }
               
            
@@ -26,14 +26,14 @@
             <a class="nav-link"asp-controller="Gallery" asp-action="Index" >Projelerimiz</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="services.html">Blog</a>
+            <a class="nav-link" asp-controller="Blog" asp-action="Index">Blog</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="services.html">S.S.S</a>
+            <a class="nav-link" asp-controller="Question" asp-action="Index">S.S.S</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="contact.html">İletişim</a>
+            <a class="nav-link" asp-controller="Contact" asp-action="Index">İletişim</a>
         </li>
 
     </ul>

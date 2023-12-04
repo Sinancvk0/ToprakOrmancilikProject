@@ -1,444 +1,75 @@
-﻿
+﻿@model List<Blog>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UlLayout.cshtml";
 }
+<style>
+    .equal-dimension-image {
+        width: 350px; 
+        height: 250px; 
+    }
 
-<!-- about breadcrumb -->
+</style>
+
 <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
         <div class="container">
-            <h2 class="title">Blog Page</h2>
+            <h2 class="title">Blog</h2>
             <ul class="breadcrumbs-custom-path mt-2">
-                <li><a href="#url">Home</a></li>
+                <li><a href="#url">Ana Sayfa</a></li>
                 <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Blog </li>
             </ul>
         </div>
     </div>
 </section>
-<!-- //about breadcrumb -->
-<!--/blog-->
-<section class="w3l-blog-slider" id="blog-slider">
-    <!-- main-slider -->
-    <div class="blog-slider py-5">
-        <div class="container py-lg-4 py-md-3 mb-md-0 mb-5">
-            <h3 class="hny-title mb-5">Blog Posts </h3>
-            <div class="owl-testimonial owl-carousel owl-theme">
-                <div class="item">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a href="blog-single.html">
-                                <img class="card-img-bottom d-block radius-image" src="/Thema/assets/images/banner1.jpg"
-                                     alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 blog-details align-self mt-lg-0 mt-4">
-                            <a href="blog-single.html" class="blog-desc-big">
-                                Travel To Make Memories All Around The World.
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis, odit non
-                                asperiores
-                                possimus voluptas sit nihil nam id explicabo saepe sapiente excepturi similique, dicta
-                                officia odio natus nemo. Ratione ipsa distinctio explicabo esse quod autem
-                                veritatis, in fugit odio.
-                            </p>
-                            <div class="author align-items-center mt-4 mb-1">
-                                <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li class="meta-item blog-lesson">
-                                    <span class="meta-value"> June 13, 2020 </span>
-                                </li>
-                                <li class="meta-item blog-students">
-                                    <span class="meta-value"> 6min read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a href="blog-single.html">
-                                <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/banner2.jpg"
-                                     alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 blog-details align-self mt-lg-0 mt-4">
-                            <a href="blog-single.html" class="blog-desc-big">
-                                Travel To Make Memories All Around The World.
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis, odit non
-                                asperiores
-                                possimus voluptas sit nihil nam id explicabo saepe sapiente excepturi similique, dicta
-                                officia odio natus nemo. Ratione ipsa distinctio explicabo esse quod autem
-                                veritatis, in fugit odio.
-                            </p>
-                            <div class="author align-items-center mt-4 mb-1">
-                                <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li class="meta-item blog-lesson">
-                                    <span class="meta-value"> June 13, 2020 </span>
-                                </li>
-                                <li class="meta-item blog-students">
-                                    <span class="meta-value"> 6min read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a href="blog-single.html">
-                                <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/banner3.jpg"
-                                     alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 blog-details align-self mt-lg-0 mt-4">
-                            <a href="blog-single.html" class="blog-desc-big">
-                                Travel To Make Memories All Around The World.
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis, odit non
-                                asperiores
-                                possimus voluptas sit nihil nam id explicabo saepe sapiente excepturi similique, dicta
-                                officia odio natus nemo. Ratione ipsa distinctio explicabo esse quod autem
-                                veritatis, in fugit odio.
-                            </p>
-                            <div class="author align-items-center mt-4 mb-1">
-                                <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li class="meta-item blog-lesson">
-                                    <span class="meta-value"> June 13, 2020 </span>
-                                </li>
-                                <li class="meta-item blog-students">
-                                    <span class="meta-value"> 6min read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <a href="blog-single.html">
-                                <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/banner1.jpg"
-                                     alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="col-lg-6 blog-details align-self mt-lg-0 mt-4">
-                            <a href="blog-single.html" class="blog-desc-big">
-                                Travel To Make Memories All Around The World.
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis, odit non
-                                asperiores
-                                possimus voluptas sit nihil nam id explicabo saepe sapiente excepturi similique, dicta
-                                officia odio natus nemo. Ratione ipsa distinctio explicabo esse quod autem
-                                veritatis, in fugit odio.
-                            </p>
-                            <div class="author align-items-center mt-4 mb-1">
-                                <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                            </div>
-                            <ul class="blog-meta">
-                                <li class="meta-item blog-lesson">
-                                    <span class="meta-value"> June 13, 2020 </span>
-                                </li>
-                                <li class="meta-item blog-students">
-                                    <span class="meta-value"> 6min read</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /main-slider -->
-</section>
+
+
 
 
 <section class="w3l-blog-block2 mt-md-5 pb-5">
     <div class="container mb-lg-4">
         <div class="row">
-            <div class="col-lg-4 col-md-6 item">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g2.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 item">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="@Url.Action("Details", "Blog", new { id = item.Id })">
+                                <img class="card-img-bottom d-block radius-image equal-dimension-image" src="@item.Image" alt="Card image cap">
+                            </a>
                         </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
+                        <div class="card-body p-0 blog-details">
+                            <a href="blog-single.html" class="blog-desc">
+                               @item.Title
+                            </a>
+                            <p>
+                                @if (item.Description.Length > 50)
+                                {
+                                    @item.Description.Substring(0, 100) <span class="read-more">Devamını Oku</span>
+                                }
+                                else
+                                {
+                                    @item.Description
+                                }
+                            </p>
+                            <div class="author align-items-center mt-3 mb-1">
+                                <a href="#"> Toprak Palet Orman Ürünleri Ambalaj</a>
+                            </div>
+                            <ul class="blog-meta">
+                                <li class="meta-item blog-lesson">
+                                    <span class="meta-value"> @item.CreateDate.ToString("MMM/yyyy") </span>
+                                </li>
+                             
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-md-0 mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g3.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-lg-0 mt-5">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g4.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5 pt-lg-3">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g5.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5 pt-lg-3">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g6.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5 pt-lg-3">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g7.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5 pt-lg-3">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g7.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5 pt-lg-3">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g8.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 item mt-5 pt-lg-3">
-                <div class="card">
-                    <div class="card-header p-0 position-relative">
-                        <a href="blog-single.html">
-                            <img class="card-img-bottom d-block radius-image" src="~/Thema/assets/images/g9.jpg"
-                                 alt="Card image cap">
-                        </a>
-                    </div>
-                    <div class="card-body p-0 blog-details">
-                        <a href="blog-single.html" class="blog-desc">
-                            Travel To Make Memories All Around The World.
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur ipsum adipisicing elit. Qui eligendi
-                            vitae sit.
-                        </p>
-                        <div class="author align-items-center mt-3 mb-1">
-                            <a href="author.html">Johnson smith</a> in <a href="#url">Traversal</a>
-                        </div>
-                        <ul class="blog-meta">
-                            <li class="meta-item blog-lesson">
-                                <span class="meta-value"> June 13, 2020 </span>
-                            </li>
-                            <li class="meta-item blog-students">
-                                <span class="meta-value"> 6min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
+            }
+
         </div>
         <!-- pagination -->
-        <div class="pagination-wrapper mt-5">
+       @*  <div class="pagination-wrapper mt-5">
             <ul class="page-pagination">
                 <li><span aria-current="page" class="page-numbers current">1</span></li>
                 <li><a class="page-numbers" href="#url">2</a></li>
@@ -448,7 +79,7 @@
                 <li><a class="page-numbers" href="#url">15</a></li>
                 <li><a class="next" href="#url"><span class="fa fa-angle-right"></span></a></li>
             </ul>
-        </div>
+        </div> *@
         <!-- //pagination -->
 
     </div>
