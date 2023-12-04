@@ -6,6 +6,7 @@ using Helper;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,9 @@ namespace Bussiness.Container
 
             services.AddScoped<IBlogService, BlogManager>();
             services.AddScoped<IBlogDal, EfBlog>();
+            
+             services.AddScoped<IMessageService,MessageManager>();
+            services.AddScoped<IMessageDal, EfMessage>();
 
             services.AddSingleton<FileUpload>();
 

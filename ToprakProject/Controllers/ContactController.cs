@@ -17,5 +17,10 @@ namespace ToprakProject.Controllers
             var values=_contactService.TGetList();
             return View(values);
         }
+
+        public IActionResult Message()
+        {
+            return View();
+        }
     }
 }

@@ -22,5 +22,6 @@ namespace Data
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
