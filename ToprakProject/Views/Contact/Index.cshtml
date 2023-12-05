@@ -1,4 +1,4 @@
-﻿@model List<Contact>
+﻿@model ContactViewModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UlLayout.cshtml";
@@ -22,7 +22,7 @@
     <div class="contact-infubd py-5">
         <div class="container py-lg-3">
             <div class="contact-grids row">
-                @foreach (var item in Model)
+                @foreach (var item in Model.Contacts)
                 {
                     <div class="col-lg-6 contact-left">
                         <div class="partners">
@@ -35,7 +35,7 @@
                             <div class="hours">
                                 <h6 class="mt-4">Mail Adresimiz:</h6>
                                 <p>
-                                    <a href="mailto:mail@traversal.com">
+                                    <a href="mailto:mail@toprakpalet.com">
                                         @item.Email
                                     </a>
                                 </p>
@@ -49,28 +49,7 @@
                     </div>
 
                 }
-                <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
-                    <form action="" method="post" class="signin-form">
-                        <div class="input-grids">
-                            <div class="form-group">
-                                <input type="text" name="NameUserName" placeholder="İsiminiz Soyisminiz" class="contact-input" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" name="YourMail" placeholder="Email Adresiniz" class="contact-input" required="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="Title" placeholder="Başlık" class="contact-input" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="Text" placeholder="Mesajınız" required=""></textarea>
-                        </div>
-                        <div class="text-right">
-                            <button class="btn btn-style btn-primary">Mesaj Gönder</button>
-                        </div>
-                    </form>
-                </div>
-
+            @await Html.PartialAsync("~/Views/Message/Index.cshtml")
             </div>
         </div>
         <div class="map mt-5 pt-md-5">

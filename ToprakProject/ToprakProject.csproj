@@ -81,7 +81,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="wwwroot\Admin\dist\assets\libs\datatables.net-autofill-bs4\node_modules\jquery\dist\" />
     <Folder Include="wwwroot\Admin\dist\assets\libs\datatables.net-autofill-bs4\node_modules\jquery\external\sizzle\dist\" />
     <Folder Include="wwwroot\Admin\dist\assets\libs\datatables.net-autofill-bs4\node_modules\jquery\src\" />

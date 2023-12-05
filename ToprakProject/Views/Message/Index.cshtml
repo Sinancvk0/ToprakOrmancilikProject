@@ -1,0 +1,60 @@
+﻿@model ContactViewModel
+
+<div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+    <form id="contactForm" asp-action="Index" asp-controller="Message" method="post" class="signin-form">
+        <div class="input-grids">
+            <div class="form-group">
+                <input asp-for="Message.NameSurName" class="contact-input" placeholder="İsiminiz Soyisminiz" />
+            </div>
+            <div class="form-group">
+                <input asp-for="Message.YourMail" class="contact-input" placeholder="Email Adresiniz" required />
+            </div>
+            <div class="form-group">
+                <input asp-for="Message.Title" class="contact-input" placeholder="Başlık" />
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea asp-for="Message.Text" required></textarea>
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn btn-style btn-primary">Mesaj Gönder</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Formun normal gönderimini engeller
+
+        var form = event.target;
+        var formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    Swal.fire({
+                        title: 'Başarılı!',
+                        text: 'Teşekkürler! Mesajınız başarıyla gönderildi.',
+                        icon: 'success',
+                        confirmButtonText: 'Tamam'
+                    });
+                    form.reset(); // Formu sıfırla
+                } else {
+                    Swal.fire({
+                        title: 'Hata!',
+                        text: 'Mesaj gönderilirken bir hata oluştu.',
+                        icon: 'error',
+                        confirmButtonText: 'Tamam'
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Hata:', error);
+            });
+    });
+</script>

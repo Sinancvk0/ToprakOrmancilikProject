@@ -1,6 +1,7 @@
 ﻿using Bussiness.Services;
 using Microsoft.AspNetCore.Mvc;
 using Model;
+using ToprakProject.Models;
 
 namespace ToprakProject.Controllers
 {
@@ -18,7 +19,11 @@ namespace ToprakProject.Controllers
         public IActionResult Index()
         {
             var values = _contactService.TGetList();
-            return View(values);
+            var ContactViewModel = new ContactViewModel
+            {
+                Contacts = values,
+            };
+            return View(ContactViewModel);
         }
     }
 }
