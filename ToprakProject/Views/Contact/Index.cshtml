@@ -36,7 +36,7 @@
                                 <h6 class="mt-4">Mail Adresimiz:</h6>
                                 <p>
                                     <a href="mailto:mail@traversal.com">
-                                   @item.Email
+                                        @item.Email
                                     </a>
                                 </p>
                                 <h6 class="mt-4">Adres:</h6>
@@ -49,14 +49,33 @@
                     </div>
 
                 }
-
-@await Html.PartialAsync("Message")
+                <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+                    <form action="" method="post" class="signin-form">
+                        <div class="input-grids">
+                            <div class="form-group">
+                                <input type="text" name="NameUserName" placeholder="İsiminiz Soyisminiz" class="contact-input" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="YourMail" placeholder="Email Adresiniz" class="contact-input" required="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Title" placeholder="Başlık" class="contact-input" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="Text" placeholder="Mesajınız" required=""></textarea>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-style btn-primary">Mesaj Gönder</button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
         </div>
         <div class="map mt-5 pt-md-5">
             <h5>Konum</h5>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12005.205891087844!2d28.4539238!3d41.2152003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b54f49ae2d2143%3A0x8f15dee701ea4473!2sToprak%20Palet%20Orman%20%C3%9Cr%C3%BCnleri%20Ambalaj!5e0!3m2!1str!2str!4v1701661555775!5m2!1str!2str" ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12005.205891087844!2d28.4539238!3d41.2152003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b54f49ae2d2143%3A0x8f15dee701ea4473!2sToprak%20Palet%20Orman%20%C3%9Cr%C3%BCnleri%20Ambalaj!5e0!3m2!1str!2str!4v1701661555775!5m2!1str!2str"></iframe>
         </div>
     </div>
 </section>

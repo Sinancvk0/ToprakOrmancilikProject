@@ -1,26 +1,24 @@
 ﻿using Bussiness.Services;
 using Microsoft.AspNetCore.Mvc;
+using Model;
 
 namespace ToprakProject.Controllers
 {
     public class ContactController : Controller
     {
         private readonly IContactService _contactService;
+  
 
         public ContactController(IContactService contactService)
         {
             _contactService = contactService;
+       
         }
 
         public IActionResult Index()
         {
-            var values=_contactService.TGetList();
+            var values = _contactService.TGetList();
             return View(values);
-        }
-
-        public IActionResult Message()
-        {
-            return View();
         }
     }
 }

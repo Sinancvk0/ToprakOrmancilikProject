@@ -1,0 +1,28 @@
+﻿@using Model
+@model Message
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="d-flex align-items-start mb-4">
+        <div class="flex-shrink-0 me-3">
+            <img class="rounded-circle avatar-sm" src="~/Admin/dist/assets/images/logo-sm.png" alt="Generic placeholder image">
+        </div>
+        <div class="flex-grow-1">
+            <h5 class="font-size-14 my-1">@Model.NameSurName</h5>
+            <small class="text-muted">@Model.YourMail</small>
+        </div>
+    </div>
+
+    <h4 class="font-size-16">@Model.Title</h4>
+
+    <p>@Model.Text</p>
+ 
+    <hr />
+
+ 
+
+    
+</div>
