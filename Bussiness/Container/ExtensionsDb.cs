@@ -41,6 +41,9 @@ namespace Bussiness.Container
              services.AddScoped<IMessageService,MessageManager>();
             services.AddScoped<IMessageDal, EfMessage>();
 
+            services.AddScoped<IDocumentService, DocumentManager>();    
+            services.AddScoped<IDocumentDal,EfDocument>();  
+
             services.AddSingleton<FileUpload>();
 
         }

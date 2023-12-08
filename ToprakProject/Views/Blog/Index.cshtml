@@ -39,7 +39,7 @@
                             </a>
                         </div>
                         <div class="card-body p-0 blog-details">
-                            <a href="blog-single.html" class="blog-desc">
+                            <a href="@Url.Action("Details", "Blog", new { id = item.Id })" class="blog-desc">
                                @item.Title
                             </a>
                             <p>

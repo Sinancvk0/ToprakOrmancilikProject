@@ -23,5 +23,6 @@ namespace Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Document> Documents { get; set; }
     }
 }
