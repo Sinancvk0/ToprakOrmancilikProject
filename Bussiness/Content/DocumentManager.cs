@@ -20,27 +20,28 @@ namespace Bussiness.Content
 
         public void TAdd(Document t)
         {
+      _documentDal.Insert(t);
      
         }
 
         public void TDelete(Document t)
         {
-            throw new NotImplementedException();
+            _documentDal.Delete(t);
         }
 
         public Document TGetById(int id)
         {
-            throw new NotImplementedException();
+           return _documentDal.GetById(id);
         }
 
         public List<Document> TGetList()
         {
-            throw new NotImplementedException();
+           return _documentDal.GetList();
         }
 
         public void TUpdate(Document t)
         {
-            throw new NotImplementedException();
+           _documentDal.Update(t);   
         }
     }
 }
