@@ -74,9 +74,22 @@
         });
 
         $("#btnSave").click(function () {
+            let queValue = $("#txtName").val();
+            let replyValue = $("#txtDescription").val();
+
+            // Girilen verilerin boş olup olmadığını kontrol et
+            if (!queValue.trim() || !replyValue.trim()) {
+                Swal.fire(
+                    'Uyarı!',
+                    'Lütfen soru ve cevap giriniz.',
+                    'warning'
+                );
+                return; // Veri girilmemişse işlemi durdur
+            }
+
             let veri = {
-                que: $("#txtName").val(),
-                reply: $("#txtDescription").val(),
+                que: queValue,
+                reply: replyValue,
             };
 
             $.ajax({
@@ -98,7 +111,6 @@
                 }
             });
         });
-
         var dataTable = $('#QuesTable').DataTable({
             ajax: {
                 url: '/Admin/Question/GetList',

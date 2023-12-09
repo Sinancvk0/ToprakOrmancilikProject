@@ -6,18 +6,28 @@ namespace ToprakProject.Controllers
 {
     public class AboutController : Controller
     {
-        private readonly IAboutService _db;
+        private readonly IAboutService _aboutService;
+        private readonly IDocumentService _documentService;
 
-        public AboutController(IAboutService db)
+        public AboutController(IAboutService aboutService, IDocumentService documentService)
         {
-            _db = db;
+            _aboutService = aboutService;
+            _documentService = documentService;
         }
 
         public IActionResult Index()
         {
-            var values=_db.TGetList();
+            var aboutValues = _aboutService.TGetList(); 
+            var documentValues = _documentService.TGetList(); 
+
         
-            return View(values);
+            var combinedModel = new CombinedModel
+            {
+                Abouts = aboutValues,
+                Documents = documentValues
+            };
+
+            return View(combinedModel);
         }
     }
 }

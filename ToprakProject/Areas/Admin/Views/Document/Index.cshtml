@@ -74,6 +74,20 @@
             $("#modal").modal('show');
 
             $("#btnSave").off().click(function () {
+                let nameValue = $("#txtName").val();
+                let descriptionValue = $("#txtDescription").val();
+                let fileValue = $("#fileImage").val();
+
+                // Veri eksikliği kontrolü
+                if (!nameValue.trim() || !descriptionValue.trim() || !fileValue) {
+                    Swal.fire(
+                        'Uyarı!',
+                        'Lütfen belge adı, açıklama ve dosya seçiniz.',
+                        'warning'
+                    );
+                    return; // Veri eksikse işlemi durdur
+                }
+
                 let veri = {
                     name: $("#txtName").val(),
                     description: $("#txtDescription").val()

@@ -104,6 +104,23 @@
         });
 
         $("#btnSave").click(function () {
+            let nameValue = $("#txtName").val();
+            let descriptionValue = $("#txtDescription").val();
+            let addressValue = $("#txtAdrress").val();
+            let phoneValue = $("#txtPhone").val();
+            let phone2Value = $("#txtPhone2").val();
+            let emailValue = $("#txtEmail").val();
+
+            // Veri eksikliği kontrolü
+            if (!nameValue.trim() || !descriptionValue.trim() || !addressValue.trim() || !phoneValue.trim() || !phone2Value.trim() || !emailValue.trim()) {
+                Swal.fire(
+                    'Uyarı!',
+                    'Lütfen tüm iletişim bilgilerini giriniz.',
+                    'warning'
+                );
+                return; // Veri eksikse işlemi durdur
+            }
+
             let veri = {
                 title: $("#txtName").val(),
                 description: $("#txtDescription").val(),

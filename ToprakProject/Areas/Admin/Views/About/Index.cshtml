@@ -95,6 +95,21 @@
 
             // Kaydet düğmesi tıklama olayı
             $("#btnSave").off().click(function () {
+                let nameValue = $("#txtName").val();
+                let descriptionValue = $("#txtDescription").val();
+                let name2Value = $("#txtName2").val();
+                let description2Value = $("#txtDescription2").val();
+                let fileValue = $("#fileImage").val();
+
+                // Veri eksikliği kontrolü
+                if (!nameValue.trim() || !descriptionValue.trim() || !name2Value.trim() || !description2Value.trim() || !fileValue) {
+                    Swal.fire(
+                        'Uyarı!',
+                        'Lütfen tüm alanları doldurun ve bir dosya seçin.',
+                        'warning'
+                    );
+                    return; // Veri eksikse işlemi durdur
+                }
                 let veri = {
                     name: $("#txtName").val(),
                     desciription: $("#txtDescription").val(),
