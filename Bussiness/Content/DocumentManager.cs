@@ -20,8 +20,8 @@ namespace Bussiness.Content
 
         public void TAdd(Document t)
         {
-      _documentDal.Insert(t);
-     
+            _documentDal.Insert(t);
+
         }
 
         public void TDelete(Document t)
@@ -31,17 +31,17 @@ namespace Bussiness.Content
 
         public Document TGetById(int id)
         {
-           return _documentDal.GetById(id);
+            return _documentDal.GetById(id);
         }
 
         public List<Document> TGetList()
         {
-           return _documentDal.GetList();
+            return _documentDal.GetList();
         }
 
         public void TUpdate(Document t)
         {
-           _documentDal.Update(t);   
+            _documentDal.Update(t);
         }
     }
 }

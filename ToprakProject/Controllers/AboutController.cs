@@ -1,5 +1,6 @@
 ﻿using Bussiness.Services;
 using Microsoft.AspNetCore.Mvc;
+using ToprakProject.Models;
 
 namespace ToprakProject.Controllers
 {
@@ -14,7 +15,8 @@ namespace ToprakProject.Controllers
 
         public IActionResult Index()
         {
-            var values=_db.TGetList();  
+            var values=_db.TGetList();
+        
             return View(values);
         }
     }

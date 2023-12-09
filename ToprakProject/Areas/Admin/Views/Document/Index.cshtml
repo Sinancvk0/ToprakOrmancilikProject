@@ -126,14 +126,14 @@
                 {
                     data: null,
                     render: function (data, type, row) {
-                        return `<a href="#" onclick="deleteAbout(${row.id})" class="btn btn-sm btn-danger">Sil</a>`;
+                        return `<a href="#" onclick="deleteDocument(${row.id})" class="btn btn-sm btn-danger">Sil</a>`;
                     }
                 }
             ]
         });
     });
 
-    function deleteAbout(aboutId) {
+    function deleteDocument(documentId) {
         Swal.fire({
             title: 'Silmek istediğinize emin misiniz?',
             text: 'Görsel Silinecek',
@@ -145,7 +145,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: '/Admin/Document/DeleteAbout/' + aboutId,
+                    url: '/Admin/Document/DeleteDocument/' + documentId,
                     method: 'POST',
                     success: function () {
                         Swal.fire(
