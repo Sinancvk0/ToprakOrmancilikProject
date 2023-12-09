@@ -3,13 +3,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UlLayout.cshtml";
 }
-<style>
-    .column img {
-        width: 750px; /* Belirli bir genişlik */
-        height: 550px; /* Belirli bir yükseklik */
-        object-fit: cover; /* Resmin kırpılmasını engeller, orantıları korur */
-    }
-</style>
+
 
 
 <section class="w3l-about-breadcrumb text-left">
@@ -36,7 +30,7 @@
                     {
                         <div class="col-lg-4 col-md-4 col-6">
                             <div class="column">
-                                <a href="#"><img src="@item.Image" alt="" class="img-fluid"></a>
+                                <a  href="#"><img src="@item.Image" alt="" class="img-fluid"></a>
                                 <div class="info">
          
                                   @*   <p>@item.Title </p> *@

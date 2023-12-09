@@ -1,10 +1,12 @@
 ﻿using Bussiness.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using ToprakProject.Models;
 
 namespace ToprakProject.Controllers
 {
+    [AllowAnonymous]
     public class MessageController : Controller
     {
         private readonly IMessageService _messageService;

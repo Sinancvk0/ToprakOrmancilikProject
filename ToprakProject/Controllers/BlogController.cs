@@ -1,8 +1,10 @@
 ﻿using Bussiness.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ToprakProject.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         private readonly IBlogService _blogService;

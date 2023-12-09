@@ -1,6 +1,7 @@
 ﻿using Bussiness.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
+[AllowAnonymous]
 public class ProductController : Controller
 {
     private readonly IProductService _db;

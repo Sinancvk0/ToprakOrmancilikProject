@@ -337,6 +337,7 @@ legend {
   }
 }
 
+
 progress {
   vertical-align: baseline;
 }
@@ -17761,6 +17762,7 @@ h4.side-title {
     padding: 12px 10px;
   }
 }
+
 
 @media screen and (max-width: 420px) {
   .w3l-footer .w3l-footer-16-main {

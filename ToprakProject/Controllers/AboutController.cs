@@ -1,9 +1,11 @@
 ﻿using Bussiness.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToprakProject.Models;
 
 namespace ToprakProject.Controllers
 {
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         private readonly IAboutService _aboutService;

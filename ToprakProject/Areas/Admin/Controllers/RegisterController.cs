@@ -7,7 +7,7 @@ using ToprakProject.Areas.Admin.Models;
 namespace ToprakProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [AllowAnonymous]
+ 
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
